@@ -14,4 +14,4 @@ In order to change mode, simple change `data-only-one-active="false"` to `data-o
 By default accordion is in mode **1**.  
 
 ## Demo
-Demo can be found [here](https://codepen.io/bojanS/pen/XWyaNrr, "Accessible accordion using css grid").
+Demo can be found [here](https://codepen.io/bojanS/pen/XWyaNrr "Accessible accordion using css grid").
