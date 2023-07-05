@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/css-accordion.css">
+    <script src="./js/css-accordion.js" defer></script>
+    <title>Accordion with css grid</title>
+
+    <style>
+        .css-accordion {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .checkbox {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .checkbox input,
+        .checkbox label {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is accordion which is using css grid for expanding/collapsing</h1>
+
+    <div class="checkbox">
+        <input type="checkbox" id="only-one-active">
+        <label for="only-one-active">Only one accordion item active?</label>
+    </div>
+
+    <div class="css-accordion" data-only-one-active="false">
+        <div class="css-accordion-item">
+            <div class="css-accordion-item__head">
+                <button aria-expanded="false" aria-controls="css-accordion-1" data-toggle-accordion>
+                    <span>Accordion 1</span>
+                </button>
+            </div>
+            <div class="css-accordion-item__body" id="css-accordion-1" aria-hidden="true">
+                <div class="css-accordion-item__content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et perferendis corporis numquam itaque
+                        voluptatem illo, asperiores labore mollitia harum autem dolorem, laborum dolores, iusto velit
+                        cumque? Debitis ab tenetur ut!</p>
+                </div>
+            </div>
+        </div>
+        <div class="css-accordion-item">
+            <div class="css-accordion-item__head">
+                <button aria-expanded="false" aria-controls="css-accordion-2" data-toggle-accordion>
+                    <span>Accordion 2</span>
+                </button>
+            </div>
+            <div class="css-accordion-item__body" id="css-accordion-2" aria-hidden="true">
+                <div class="css-accordion-item__content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et perferendis corporis numquam itaque
+                        voluptatem illo, asperiores labore mollitia harum autem dolorem, laborum dolores, iusto velit
+                        cumque? Debitis ab tenetur ut!</p>
+                </div>
+            </div>
+        </div>
+        <div class="css-accordion-item">
+            <div class="css-accordion-item__head">
+                <button aria-expanded="false" aria-controls="css-accordion-3" data-toggle-accordion>
+                    <span>Accordion 3</span>
+                </button>
+            </div>
+            <div class="css-accordion-item__body" id="css-accordion-3" aria-hidden="true">
+                <div class="css-accordion-item__content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et perferendis corporis numquam itaque
+                        voluptatem illo, asperiores labore mollitia harum autem dolorem, laborum dolores, iusto velit
+                        cumque? Debitis ab tenetur ut!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // change accordion mode
+        const checkbox = document.getElementById("only-one-active");
+        const accordion = document.querySelector(".css-accordion");
+
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                accordion.dataset.onlyOneActive = "true";
+            } else {
+                accordion.dataset.onlyOneActive = "false";
+            }
+        })
+    </script>
+</body>
+
+</html>

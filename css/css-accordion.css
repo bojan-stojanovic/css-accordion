@@ -1,0 +1,58 @@
+.css-accordion {
+    display: grid;
+    gap: 1rem;
+}
+
+.css-accordion-item {
+    grid-column: 1 / -1;
+}
+
+.css-accordion-item__head {
+    background-color: #eee;
+}
+
+.css-accordion-item__head button {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.css-accordion-item__head button span {
+    padding-right: 1rem;
+}
+
+.css-accordion-item__head button::after {
+    content: "";
+    border-style: solid;
+    border-color: #000;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform .3s;
+}
+
+.css-accordion-item__head button[aria-expanded="true"]::after {
+    transform: rotate(45deg) scale(-1);
+}
+
+.css-accordion-item__body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .3s;
+}
+
+.css-accordion-item__body[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+}
+
+.css-accordion-item__content {
+    overflow: hidden;
+    padding: 0 1rem;
+}
